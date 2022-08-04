@@ -19,7 +19,7 @@ void installJSIExample(jsi::Runtime& jsiRuntime) {
   auto multiplyd = jsi::Function::createFromHostFunction(
     jsiRuntime, // JSI runtime instance
     jsi::PropNameID::forAscii(jsiRuntime, "multiplyd"), // Internal function name
-    1, // Number of arguments in function
+    2, // Number of arguments in function
     // This is a C++ lambda function, the empty [] at the beginning is used to capture pointer/references so that they don't get de-allocated
     // Then you get another instance of the runtime to use inside the function, a "this" value from the javascript world, a pointer to the arguments (you can treat it as an array) and finally a count for the number of arguments
     // Finally the function needs to return a jsi::Value (read JavaScript value)
@@ -30,7 +30,7 @@ void installJSIExample(jsi::Runtime& jsiRuntime) {
         jsi::detail::throwJSError(runtime, "Non number arguments passed to sequel");
       }
 
-      double res = 42;
+      double res = arguments[0].getNumber() * arguments[1].getNumber();
       return jsi::Value(res);
     }
   );

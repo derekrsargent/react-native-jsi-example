@@ -7,8 +7,8 @@
 
 #import <React/RCTAppSetupUtils.h>
 
-#import "react-native-jsi-example.h"
-#import "JSIExample.h"
+//#import "react-native-jsi-example.h"
+//#import "JSIExample.h"
 
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>

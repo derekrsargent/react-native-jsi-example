@@ -50,7 +50,7 @@ const Section = ({children, title}) => {
 };
 
 const onPress = () => {
-  console.log(global.multiplyd(2,2))
+  console.log(global?.multiplyd(2, 4))
 }
 
 const App = () => {
