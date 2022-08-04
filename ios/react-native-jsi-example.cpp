@@ -37,6 +37,20 @@ void installJSIExample(jsi::Runtime& jsiRuntime) {
 
   // Registers the function on the global object
   jsiRuntime.global().setProperty(jsiRuntime, "multiplyd", std::move(multiplyd));
+  
+  auto getDeviceName = jsi::Function::createFromHostFunction(
+                                                             jsiRuntime,
+                                                             jsi::PropNameID::forAscii(jsiRuntime, "getDeviceName"),
+                                                             0,
+  [](jsi::Runtime &runtime, const jsi::Value &thisValue, const jsi::Value* arguments, size_t count) -> jsi::Value {
+
+    std::string helloworld = "Hello getDeviceName from C++";
+    return jsi::Value(runtime, jsi::String::createFromUtf8(runtime, helloworld));
+  });
+  
+  // Registers the function on the global object
+  jsiRuntime.global().setProperty(jsiRuntime, "getDeviceName", std::move(getDeviceName));
+  
 }
 
 void cleanUpJSIExample() {

@@ -40,4 +40,14 @@ RCT_EXPORT_MODULE()
   NSLog(@"invalidate (cleanup)");
 }
 
+- (NSString *)getModel {
+  return @"iPhone 111";
+//  struct utsname systemInfo;
+//
+//  uname(&systemInfo);
+//
+//  return [NSString stringWithCString:systemInfo.machine
+//                            encoding:NSUTF8StringEncoding];
+}
+
 @end
