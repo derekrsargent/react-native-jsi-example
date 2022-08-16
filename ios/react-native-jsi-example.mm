@@ -8,7 +8,7 @@
 // Import our header file to implement the `installJSIExample` and `cleanUpJSIExample` functions
 #import "react-native-jsi-example.h"
 #import "JSIExample.h"
-//#import "JSISampleObject.h"
+#import "JSISampleObject.h"
 
 #import <iostream>
 
@@ -16,10 +16,10 @@
 using namespace facebook;
 
 // We get the runtime from the obj-c code and we create our native functions here
-void installJSIExample(jsi::Runtime& jsiRuntime) {
+void installJSIExample(jsi::Runtime& jsiRuntime, JSISampleObject* jsiSampleObject) {
   
   std::cout << "jsiExample: " << std::endl;
-  //std::cout << [jsiSampleObject returnFunnyValue] << std::endl;
+  //std::cout << [jsiSampleObject returnExampleInteger] << std::endl;
   std::cout << "^jsiExample: " << std::endl;
   
   // jsi::Function::createFromHostFunction will create a JavaScript function based on a "host" (read C++) function
@@ -54,7 +54,7 @@ void installJSIExample(jsi::Runtime& jsiRuntime) {
 //    {
 //        return jsi::String::createFromUtf8(runtime, [value UTF8String] ?: "");
 //    }
-    NSLog(@"Hello World~~~~~~");
+    //NSLog(@"Hello World~~~~~~");
     //NSLog([jsiExample getModel]);
 
 //    jsi::String convert1 = jsi::String::createFromUtf8(runtime, [jsiExample getModel]);

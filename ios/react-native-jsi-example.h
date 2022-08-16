@@ -9,7 +9,7 @@
 #import <jsi/jsi.h>
 
 #import "JSIExample.h"
-//#import "JSISampleObject.h"
+#import "JSISampleObject.h"
 
-void installJSIExample(facebook::jsi::Runtime& jsiRuntime);
+void installJSIExample(facebook::jsi::Runtime& jsiRuntime, JSISampleObject* jsiSampleObject);
 void cleanUpJSIExample();

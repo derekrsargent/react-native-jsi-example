@@ -7,7 +7,7 @@
 
 #import "JSIExample.h"
 #import "react-native-jsi-example.h"
-//#import "JSISampleObject.h"
+#import "JSISampleObject.h"
 
 #import <React/RCTBridge+Private.h>
 #import <React/RCTUtils.h>
@@ -35,8 +35,8 @@ RCT_EXPORT_MODULE()
     return;
   }
   
-  //id jsiSampleObject = [[JSISampleObject alloc] init];
-  installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime);
+  id jsiSampleObject = [[JSISampleObject alloc] init];
+  installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime, jsiSampleObject);
 }
 
 - (void)invalidate {
