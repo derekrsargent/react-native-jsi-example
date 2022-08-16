@@ -8,7 +8,7 @@
 // Import our header file to implement the `installJSIExample` and `cleanUpJSIExample` functions
 #import "react-native-jsi-example.h"
 #import "JSIExample.h"
-#import "JSISampleObject.h"
+//#import "JSISampleObject.h"
 
 #import <iostream>
 
@@ -16,7 +16,7 @@
 using namespace facebook;
 
 // We get the runtime from the obj-c code and we create our native functions here
-void installJSIExample(jsi::Runtime& jsiRuntime, JSIExample* jsiExample, JSISampleObject* jsiSampleObject) {
+void installJSIExample(jsi::Runtime& jsiRuntime) {
   
   std::cout << "jsiExample: " << std::endl;
   //std::cout << [jsiSampleObject returnFunnyValue] << std::endl;

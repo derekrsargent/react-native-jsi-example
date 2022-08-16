@@ -7,7 +7,7 @@
 
 #import "JSIExample.h"
 #import "react-native-jsi-example.h"
-#import "JSISampleObject.h"
+//#import "JSISampleObject.h"
 
 #import <React/RCTBridge+Private.h>
 #import <React/RCTUtils.h>
@@ -16,7 +16,7 @@
 
 using namespace facebook;
 
-@synthesize bridge= _bridge;
+@synthesize bridge = _bridge;
 @synthesize methodQueue = _methodQueue;
 
 RCT_EXPORT_MODULE()
@@ -35,19 +35,14 @@ RCT_EXPORT_MODULE()
     return;
   }
   
-  id jsiSampleObject = [[JSISampleObject alloc] init];
-  //NSLog(typeid(self));
-  installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime, self, jsiSampleObject);
+  //id jsiSampleObject = [[JSISampleObject alloc] init];
+  installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime);
 }
 
 - (void)invalidate {
   //cleanUpSequel();
   NSLog(@"invalidate (cleanup)");
 }
-
-//- (int)returnFunnyNumber {
-//  return 69;
-//}
 
 - (NSString *)getModel {
   return @"iPhone 111 from Obj-C";
@@ -58,32 +53,6 @@ RCT_EXPORT_MODULE()
 //
 //  return [NSString stringWithCString:systemInfo.machine
 //                            encoding:NSUTF8StringEncoding];
-}
-
-// We get the runtime from the obj-c code and we create our native functions here
-static void installJSIExample1(jsi::Runtime& jsiRuntime, JSIExample* jsiExample) {
-  // jsi::Function::createFromHostFunction will create a JavaScript function based on a "host" (read C++) function
-  auto multiplyd1 = jsi::Function::createFromHostFunction(
-    jsiRuntime, // JSI runtime instance
-    jsi::PropNameID::forAscii(jsiRuntime, "multiplyd1"), // Internal function name
-    2, // Number of arguments in function
-    // This is a C++ lambda function, the empty [] at the beginning is used to capture pointer/references so that they don't get de-allocated
-    // Then you get another instance of the runtime to use inside the function, a "this" value from the javascript world, a pointer to the arguments (you can treat it as an array) and finally a count for the number of arguments
-    // Finally the function needs to return a jsi::Value (read JavaScript value)
-    [](jsi::Runtime& runtime, const jsi::Value& thisValue, const jsi::Value* arguments, size_t count) -> jsi::Value {
-
-      // the jsi::Value has a lot of helper methods for you to manipulate the data
-      if(!arguments[0].isNumber() || !arguments[1].isNumber()) {
-        jsi::detail::throwJSError(runtime, "Non number arguments passed to sequel");
-      }
-
-      double res = arguments[0].getNumber() * arguments[1].getNumber();
-      return jsi::Value(res);
-    }
-  );
-  
-  // Registers the function on the global object
-  jsiRuntime.global().setProperty(jsiRuntime, "multiplyd1", std::move(multiplyd1));
 }
 
 @end
