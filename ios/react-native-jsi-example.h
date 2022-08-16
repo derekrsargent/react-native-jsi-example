@@ -5,8 +5,11 @@
 //  Created by Derek Sargent on 2022-07-27.
 //
 
-#include <jsi/jsilib.h>
-#include <jsi/jsi.h>
+#import <jsi/jsilib.h>
+#import <jsi/jsi.h>
 
-void installJSIExample(facebook::jsi::Runtime& jsiRuntime);
+#import "JSIExample.h"
+#import "JSISampleObject.h"
+
+void installJSIExample(facebook::jsi::Runtime& jsiRuntime, JSIExample* jsiExample, JSISampleObject* jsiSampleObject);
 void cleanUpJSIExample();

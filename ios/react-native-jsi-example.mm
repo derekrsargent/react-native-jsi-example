@@ -6,15 +6,22 @@
 //
 
 // Import our header file to implement the `installJSIExample` and `cleanUpJSIExample` functions
-#include "react-native-jsi-example.h"
-// sstream contains functions to manipulate strings in C++
-#include <sstream>
+#import "react-native-jsi-example.h"
+#import "JSIExample.h"
+#import "JSISampleObject.h"
+
+#import <iostream>
 
 // The namespace allows for syntactic sugar around the JSI objects. ex. call: jsi::Function instead of facebook::jsi::Function
 using namespace facebook;
 
 // We get the runtime from the obj-c code and we create our native functions here
-void installJSIExample(jsi::Runtime& jsiRuntime) {
+void installJSIExample(jsi::Runtime& jsiRuntime, JSIExample* jsiExample, JSISampleObject* jsiSampleObject) {
+  
+  std::cout << "jsiExample: " << std::endl;
+  //std::cout << [jsiSampleObject returnFunnyValue] << std::endl;
+  std::cout << "^jsiExample: " << std::endl;
+  
   // jsi::Function::createFromHostFunction will create a JavaScript function based on a "host" (read C++) function
   auto multiplyd = jsi::Function::createFromHostFunction(
     jsiRuntime, // JSI runtime instance
@@ -43,7 +50,18 @@ void installJSIExample(jsi::Runtime& jsiRuntime) {
                                                              jsi::PropNameID::forAscii(jsiRuntime, "getDeviceName"),
                                                              0,
   [](jsi::Runtime &runtime, const jsi::Value &thisValue, const jsi::Value* arguments, size_t count) -> jsi::Value {
+//    jsi::String convertNSStringToJSIString(jsi::Runtime &runtime, NSString *value)
+//    {
+//        return jsi::String::createFromUtf8(runtime, [value UTF8String] ?: "");
+//    }
+    NSLog(@"Hello World~~~~~~");
+    //NSLog([jsiExample getModel]);
 
+//    jsi::String convert1 = jsi::String::createFromUtf8(runtime, [jsiExample getModel]);
+//
+//    jsi::String deviceName = jsi::String::createFromUtf8(runtime, "Hello world");
+//    return jsi::Value(runtime, deviceName);
+    
     std::string helloworld = "Hello getDeviceName from C++";
     return jsi::Value(runtime, jsi::String::createFromUtf8(runtime, helloworld));
   });

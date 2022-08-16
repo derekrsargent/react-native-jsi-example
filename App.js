@@ -50,8 +50,9 @@ const Section = ({children, title}) => {
 };
 
 const onPress = () => {
-  console.log(global?.multiplyd(2, 4))
-  console.log(global?.getDeviceName())
+  //console.log(global)
+  //console.log(global?.multiplyd1(2, 4))
+  console.log(global.getDeviceName())
 }
 
 const App = () => {

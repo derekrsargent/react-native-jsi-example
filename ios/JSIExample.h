@@ -11,4 +11,8 @@
 
 @property(nonatomic, assign) BOOL setBridgeOnMainQueue;
 
+//- (int) returnFunnyNumber;
+//- (void)invalidate;
+//- (NSString * )getModel;
+
 @end
