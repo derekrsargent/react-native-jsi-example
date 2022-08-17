@@ -5,12 +5,13 @@
 //  Created by Derek Sargent on 2022-07-27.
 //
 
-#import "JSIExample.h"
 #import "react-native-jsi-example.h"
+#import "JSIExample.h"
 #import "JSISampleObject.h"
 
 #import <React/RCTBridge+Private.h>
 #import <React/RCTUtils.h>
+#import <iostream>
 
 @implementation JSIExample
 
@@ -31,12 +32,15 @@ RCT_EXPORT_MODULE()
 
   RCTCxxBridge *cxxBridge = (RCTCxxBridge *)self.bridge;
   if (!cxxBridge.runtime) {
-    NSLog(@"-+-+-+---------JSI binding unsuccessful");
+    NSLog(@"-+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+----------+-+-+---------JSI binding unsuccessful");
     return;
   }
   
   id jsiSampleObject = [[JSISampleObject alloc] init];
-  installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime, jsiSampleObject);
+  std::cout << [jsiSampleObject okloll] << std::endl;
+  std::cout << "^%^%^%^%^%^%^%^%^%^%^%" << std::endl;
+
+  installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime);
 }
 
 - (void)invalidate {

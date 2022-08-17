@@ -5,13 +5,17 @@
 //  Created by Derek Sargent on 2022-08-16.
 //
 
-#ifndef JSISampleObject_h
-#define JSISampleObject_h
+#import <Foundation/Foundation.h>
+
+//#ifndef JSISampleObject_h
+//#define JSISampleObject_h
 
 @interface JSISampleObject : NSObject
 
 - (int) returnExampleInteger;
 
+- (int) okloll;
+
 @end
 
-#endif /* JSISampleObject_h */
+//#endif /* JSISampleObject_h */
