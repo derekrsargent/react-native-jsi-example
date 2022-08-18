@@ -17,6 +17,7 @@ using namespace facebook;
 // We get the runtime from the obj-c code and we create our native functions here
 void installJSIExample(jsi::Runtime& jsiRuntime) {
   
+  // Create an instance of our sample class and call a method
   id jsiSampleObject = [[JSISampleObject alloc] init];
   std::cout << [jsiSampleObject returnExampleInteger] << std::endl;
   

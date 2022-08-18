@@ -36,10 +36,6 @@ RCT_EXPORT_MODULE()
     return;
   }
   
-  // Create an instance of our sample class and call a function
-//  id jsiSampleObject = [[JSISampleObject alloc] init];
-//  std::cout << [jsiSampleObject okloll] << std::endl;
-
   installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime);
 }
 
