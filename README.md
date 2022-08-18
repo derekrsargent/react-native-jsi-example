@@ -19,4 +19,4 @@ The steps followed to create this project:
 
 ## Run Project
 
-Open the `ReactNativeJSI2.xcworkspace` in the `ios` folder using Xcode and press play, or run `yarn ios` in the project root directory. 
+Open the `ReactNativeJsi2.xcworkspace` in the `ios` folder using Xcode and press play; or run `yarn ios` in the project root directory. 
