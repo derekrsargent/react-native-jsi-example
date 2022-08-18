@@ -39,20 +39,4 @@ RCT_EXPORT_MODULE()
   installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime);
 }
 
-- (void)invalidate {
-  //cleanUpSequel();
-  NSLog(@"invalidate (cleanup)");
-}
-
-- (NSString *)getModel {
-  return @"iPhone 111 from Obj-C";
-  
-//  struct utsname systemInfo;
-//
-//  uname(&systemInfo);
-//
-//  return [NSString stringWithCString:systemInfo.machine
-//                            encoding:NSUTF8StringEncoding];
-}
-
 @end
