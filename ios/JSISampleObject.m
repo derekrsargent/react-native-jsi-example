@@ -15,8 +15,4 @@
   return 6;
 };
 
-- (int) okloll {
-  return 69;
-};
-
 @end

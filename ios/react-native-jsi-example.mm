@@ -7,7 +7,7 @@
 
 // Import our header file to implement the `installJSIExample` and `cleanUpJSIExample` functions
 #import "react-native-jsi-example.h"
-//#import "JSISampleObject.h"
+#import "JSISampleObject.h"
 
 #import <iostream>
 
@@ -17,9 +17,8 @@ using namespace facebook;
 // We get the runtime from the obj-c code and we create our native functions here
 void installJSIExample(jsi::Runtime& jsiRuntime) {
   
-  std::cout << "jsiExample: " << std::endl;
-  //std::cout << [jsiSampleObject okloll] << std::endl;
-  std::cout << "^jsiExample: " << std::endl;
+  id jsiSampleObject = [[JSISampleObject alloc] init];
+  std::cout << [jsiSampleObject returnExampleInteger] << std::endl;
   
   // jsi::Function::createFromHostFunction will create a JavaScript function based on a "host" (read C++) function
   auto multiplyd = jsi::Function::createFromHostFunction(
@@ -33,7 +32,7 @@ void installJSIExample(jsi::Runtime& jsiRuntime) {
 
       // the jsi::Value has a lot of helper methods for you to manipulate the data
       if(!arguments[0].isNumber() || !arguments[1].isNumber()) {
-        jsi::detail::throwJSError(runtime, "Non number arguments passed to sequel");
+        jsi::detail::throwJSError(runtime, "Non-number arguments passed to method");
       }
 
       double res = arguments[0].getNumber() * arguments[1].getNumber();
@@ -43,19 +42,6 @@ void installJSIExample(jsi::Runtime& jsiRuntime) {
 
   // Registers the function on the global object
   jsiRuntime.global().setProperty(jsiRuntime, "multiplyd", std::move(multiplyd));
-  
-  auto getDeviceName = jsi::Function::createFromHostFunction(
-                                                             jsiRuntime,
-                                                             jsi::PropNameID::forAscii(jsiRuntime, "getDeviceName"),
-                                                             0,
-  [](jsi::Runtime &runtime, const jsi::Value &thisValue, const jsi::Value* arguments, size_t count) -> jsi::Value {
-    std::string helloworld = "Hello getDeviceName from C++";
-    return jsi::Value(runtime, jsi::String::createFromUtf8(runtime, helloworld));
-  });
-  
-  // Registers the function on the global object
-  jsiRuntime.global().setProperty(jsiRuntime, "getDeviceName", std::move(getDeviceName));
-  
 }
 
 void cleanUpJSIExample() {
