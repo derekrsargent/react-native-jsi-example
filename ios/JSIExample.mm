@@ -22,6 +22,7 @@ using namespace facebook;
 
 RCT_EXPORT_MODULE()
 
+// Reigstering our method on the main thread
 + (BOOL)requiresMainQueueSetup {
   return YES;
 }
