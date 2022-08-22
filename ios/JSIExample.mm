@@ -12,6 +12,7 @@
 #import <React/RCTBridge+Private.h>
 #import <React/RCTUtils.h>
 #import <iostream>
+#import <Foundation/Foundation.h>
 
 @implementation JSIExample
 
@@ -22,7 +23,9 @@ using namespace facebook;
 
 RCT_EXPORT_MODULE()
 
-// Reigstering our method on the main thread
+// The threads are JS, Shadow, Main, Native
+
+// Registering our method on the main queue (which has a subtle difference from the main thread). This queue is created automatically on behalf of the main thread and will always execute on the main thread
 + (BOOL)requiresMainQueueSetup {
   return YES;
 }
@@ -36,6 +39,9 @@ RCT_EXPORT_MODULE()
     NSLog(@"+--------JSI binding unsuccessful--------+");
     return;
   }
+  
+  // Confirm we're on the main thread for curiosity sake
+  NSLog(@"Is main thread? %i", (int)[NSThread isMainThread]);
   
   installJSIExample(*(facebook::jsi::Runtime *)cxxBridge.runtime);
 }
