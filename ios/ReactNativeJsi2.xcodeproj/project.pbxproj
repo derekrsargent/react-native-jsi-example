@@ -14,7 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-ReactNativeJsi2-ReactNativeJsi2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ReactNativeJsi2-ReactNativeJsi2Tests.a */; };
 		7A51CEE828917DD2000A3A60 /* JSIExample.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A51CEE728917DD2000A3A60 /* JSIExample.mm */; };
-		7A51CEEC28918024000A3A60 /* react-native-jsi-example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A51CEEB28918023000A3A60 /* react-native-jsi-example.cpp */; };
+		7A51CEEC28918024000A3A60 /* react-native-jsi-example.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A51CEEB28918023000A3A60 /* react-native-jsi-example.mm */; };
+		7A57FDAF28AC3589003E5CB9 /* JSISampleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A57FDAE28AC3589003E5CB9 /* JSISampleObject.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +47,9 @@
 		7A51CEE728917DD2000A3A60 /* JSIExample.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = JSIExample.mm; sourceTree = "<group>"; };
 		7A51CEE928917DFF000A3A60 /* JSIExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSIExample.h; sourceTree = "<group>"; };
 		7A51CEEA28917FDD000A3A60 /* react-native-jsi-example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "react-native-jsi-example.h"; sourceTree = "<group>"; };
-		7A51CEEB28918023000A3A60 /* react-native-jsi-example.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "react-native-jsi-example.cpp"; sourceTree = "<group>"; };
+		7A51CEEB28918023000A3A60 /* react-native-jsi-example.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "react-native-jsi-example.mm"; sourceTree = "<group>"; };
+		7A57FDAD28AC355A003E5CB9 /* JSISampleObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSISampleObject.h; sourceTree = "<group>"; };
+		7A57FDAE28AC3589003E5CB9 /* JSISampleObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSISampleObject.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeJsi2/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ReactNativeJsi2-ReactNativeJsi2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeJsi2-ReactNativeJsi2Tests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeJsi2-ReactNativeJsi2Tests/Pods-ReactNativeJsi2-ReactNativeJsi2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -101,7 +104,9 @@
 				7A51CEE728917DD2000A3A60 /* JSIExample.mm */,
 				7A51CEE928917DFF000A3A60 /* JSIExample.h */,
 				7A51CEEA28917FDD000A3A60 /* react-native-jsi-example.h */,
-				7A51CEEB28918023000A3A60 /* react-native-jsi-example.cpp */,
+				7A51CEEB28918023000A3A60 /* react-native-jsi-example.mm */,
+				7A57FDAD28AC355A003E5CB9 /* JSISampleObject.h */,
+				7A57FDAE28AC3589003E5CB9 /* JSISampleObject.m */,
 			);
 			name = ReactNativeJsi2;
 			sourceTree = "<group>";
@@ -422,10 +427,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A51CEEC28918024000A3A60 /* react-native-jsi-example.cpp in Sources */,
+				7A51CEEC28918024000A3A60 /* react-native-jsi-example.mm in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				7A51CEE828917DD2000A3A60 /* JSIExample.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				7A57FDAF28AC3589003E5CB9 /* JSISampleObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

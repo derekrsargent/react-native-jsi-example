@@ -14,7 +14,6 @@ import {
   StyleSheet,
   Text,
   useColorScheme,
-  View,
   TouchableOpacity,
 } from 'react-native';
 
@@ -23,34 +22,8 @@ import {
   Header,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
 const onPress = () => {
-  console.log(global.multiplyd(2,2))
+  console.log(global?.multiplyd1(2, 4))
 }
 
 const App = () => {
