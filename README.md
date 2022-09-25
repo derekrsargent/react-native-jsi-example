@@ -17,6 +17,10 @@ The steps followed to create this project:
 - Update `App.js` to invoke the global method and do a console log for this example.
 - If JSI binding is unsuccessful try cleaning the build folder using Xcode.
 
+## Other Notes
+
+- The setBridge method is called automatically. 
+
 ## Run Project
 
 Open the `ReactNativeJsi2.xcworkspace` in the `ios` folder using Xcode and press play; or run `yarn ios` in the project root directory. 
