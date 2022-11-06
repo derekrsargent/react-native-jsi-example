@@ -19,7 +19,7 @@ The steps followed to create this project:
 
 ## Other Notes
 
-- The setBridge method is called automatically. 
+- The setBridge method is called automatically during app initialization. 
 
 ## Run Project
 
